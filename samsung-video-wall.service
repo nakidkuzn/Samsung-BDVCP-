@@ -1,0 +1,22 @@
+--- a/samsung-video-wall.service
++++ b/samsung-video-wall.service
+ [Unit]
+ Description=Samsung LH55BECHLGFXGO Video Wall Control System
+ After=network.target
+ 
+ [Service]
+ Type=simple
+ User=$USER
+ Group=$USER
+ WorkingDirectory=$(pwd)
+-Environment=PATH=$(pwd)/venv/bin
++Environment="PATH=$(pwd)/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
++Environment=PYTHONUNBUFFERED=1
+ ExecStart=$(pwd)/venv/bin/python main.py
+ Restart=always
+ RestartSec=10
+ StandardOutput=journal
+ StandardError=journal
+ 
+ [Install]
+ WantedBy=multi-user.target
