@@ -1,0 +1,78 @@
+# config.yaml - Samsung LH55BECHLGFXGO Configuration
+system:
+  name: "Samsung LH55BECHLGFXGO Video Wall Control System"
+  version: "1.0.0"
+  debug: false
+
+displays:
+  1:
+    name: "Samsung LH55BECHLGFXGO-01"
+    ip: "192.168.1.101"
+    port: 1515
+    protocol: "tcp"
+    model: "LH55BECHLGFXGO"
+    location: "Main Display"
+    serial_number: ""
+  2:
+    name: "Samsung LH55BECHLGFXGO-02"
+    ip: "192.168.1.102"
+    port: 1515
+    protocol: "tcp"
+    model: "LH55BECHLGFXGO"
+    location: "Left Display"
+    serial_number: ""
+  3:
+    name: "Samsung LH55BECHLGFXGO-03"
+    ip: "192.168.1.103"
+    port: 1515
+    protocol: "tcp"
+    model: "LH55BECHLGFXGO"
+    location: "Right Display"
+    serial_number: ""
+  4:
+    name: "Samsung LH55BECHLGFXGO-04"
+    ip: "192.168.1.104"
+    port: 1515
+    protocol: "tcp"
+    model: "LH55BECHLGFXGO"
+    location: "Bottom Display"
+    serial_number: ""
+
+server:
+  host: "0.0.0.0"
+  port: 5000
+  secret_key: "samsung-lh55bechlgfxgo-2024"
+
+magicinfo:
+  enabled: false
+  server_url: ""
+  username: "admin"
+  password: ""
+  api_key: ""
+
+optisigns:
+  enabled: false
+  server_url: ""
+  api_key: ""
+  username: "admin"
+  password: ""
+
+content:
+  static_path: "./static_content"
+  upload_path: "./uploads"
+  max_file_size_mb: 500
+  allowed_extensions: [".jpg", ".jpeg", ".png", ".gif", ".mp4", ".avi", ".mov", ".webm", ".html"]
+
+monitoring:
+  health_check_interval: 30
+  temperature_warning_threshold: 60
+  temperature_critical_threshold: 70
+  max_error_count: 5
+  log_retention_days: 30
+
+video_wall:
+  enabled: false
+  default_layout: "2x2"
+  bezel_compensation: true
+  auto_power_management: true
+  max_grid_size: "10x10"
