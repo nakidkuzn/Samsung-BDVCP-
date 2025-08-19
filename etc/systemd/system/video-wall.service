@@ -1,16 +1,12 @@
-# systemd service file - For Linux service management
-# /etc/systemd/system/video-wall.service
-
 [Unit]
-Description=Video Wall Control System
+Description=Samsung Video Wall Control Service
 After=network.target
 
 [Service]
 Type=simple
 User=videowall
-WorkingDirectory=/opt/video-wall
-Environment=PATH=/opt/video-wall/venv/bin
-ExecStart=/opt/video-wall/venv/bin/python app.py
+WorkingDirectory=/opt/video-wall-control
+ExecStart=/usr/bin/python3 video_wall_backend.py
 Restart=always
 RestartSec=10
 
